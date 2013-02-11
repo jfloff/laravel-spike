@@ -9,6 +9,9 @@ class UrlController extends BaseController {
 	/**
 	 * Display a listing of the resource.
 	 *
+	 * $ curl laravel-spike.dev:8888/api/v1/url
+	 * $ curl --user firstuser:first_password laravel-spike.dev:8888/api/v1/url
+	 *
 	 * @return Response
 	 */
 	public function index()
@@ -24,6 +27,11 @@ class UrlController extends BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
+	 *
+	 * $ curl --user firstuser:first_password -d 'url=http://google.com&description=A Search Engine' laravel-spike.dev:8888/api/v1/url
+	 * $ curl --user firstuser:first_password -d 'url=http://fideloper.com&description=A Great Blog' laravel-spike.dev:8888/api/v1/url
+	 * $ curl --user seconduser:second_password -d 'url=http://digitalsurgeons.com&description=A Marketing Agency' laravel-spike.dev:8888/api/v1/url
+	 * $ curl --user seconduser:second_password -d 'url=http://www.poppstrong.com/&description=I feel for him' laravel-spike.dev:8888/api/v1/url
 	 *
 	 * @return Response
 	 */
@@ -45,6 +53,9 @@ class UrlController extends BaseController {
 
 	/**
 	 * Display the specified resource.
+	 *
+	 * $ curl --user firstuser:first_password laravel-spike.dev:8888/api/v1/url
+	 * $ curl --user firstuser:first_password laravel-spike.dev:8888/api/v1/url/2
 	 *
 	 * @return Response
 	 */
@@ -92,7 +103,9 @@ class UrlController extends BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
+	 *
 	 * curl -X DELETE --user firstuser:first_password laravel-spike.dev:8888/api/v1/url/2
+	 *
 	 * @return Response
 	 */
 	public function destroy($id)

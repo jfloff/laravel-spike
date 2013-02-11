@@ -16,6 +16,10 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+/**
+ * $ curl laravel-spike.dev:8888/authtest
+ * $ curl --user firstuser:first_password laravel-spike.dev:8888/authtest
+ */
 Route::get('/authtest', array('before' => 'apiauth', function()
 {
     return View::make('hello');
