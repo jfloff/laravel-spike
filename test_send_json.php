@@ -16,18 +16,17 @@ $url_5 = json_encode(['url' => 'http://yahoo.com']);
 $ch = curl_init($hostname);
 curl_setopt($ch, CURLOPT_USERPWD, $user . ':' . $pwd);
 
-// for debuging of curl
+// for debuging of curl - old style
 $url_1 = 'url=http://google.com&description=IST';
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $url_1);
 
-// curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-// curl_setopt($ch, CURLOPT_POSTFIELDS, $url_1);
+// JSON
 // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 // curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-//     'Content-Type: application/json',
-//     'Content-Length: ' . strlen($url_1))
-// );
+    // 'Content-Type: application/json',
+    // 'Content-Length: ' . strlen($url_1)
+// ));
 
 $result = curl_exec($ch);
 echo "\n";

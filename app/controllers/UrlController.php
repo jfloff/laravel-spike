@@ -38,8 +38,8 @@ class UrlController extends BaseController {
 	public function store()
 	{
 		$url = new Url;
-	    $url->url = Request::get('url');
-	    $url->description = Request::get('description');
+	    $url->url = Input::get('url');
+	    $url->description = Input::get('description');
 	    $url->user_id = Auth::user()->id;
 	    // Validation and Filtering is sorely needed!!
 	    // Seriously, I'm a bad person for leaving that out.
@@ -85,13 +85,13 @@ class UrlController extends BaseController {
 	public function update($id)
 	{
 		$url = Url::where('user_id', Auth::user()->id)->find($id);
-	    if ( Request::get('url') )
+	    if ( Input::get('url') )
 	    {
-	        $url->url = Request::get('url');
+	        $url->url = Input::get('url');
 	    }
-	    if ( Request::get('description') )
+	    if ( Input::get('description') )
 	    {
-	        $url->description = Request::get('description');
+	        $url->description = Input::get('description');
 	    }
 	    $url->save();
 	    return Response::json([
