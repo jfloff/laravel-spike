@@ -2,13 +2,12 @@
 
 class HelloService {
 
-    private $name;
+    public function fire($job, $data) {
 
-    function __construct($name) {
-        $this->name = $name;
-    }
+        $name = $data['name'];
 
-    public function getHello() {
-        return "Hello $this->name! :)";
+        echo "Hello $name! :)";
+
+        $job->delete();
     }
 }

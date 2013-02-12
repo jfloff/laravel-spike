@@ -11,12 +11,11 @@ class UrlController extends BaseController {
 	{
 		$input = Input::json(true);
 
-		$helloService = new HelloService($input['name']);
+		Queue::push('HelloService', ['name' => $input['name']]);
 
 	    return Response::json(
 	    		[
-		            'error' => false,
-		            'name' => $helloService->getHello()
+		            'error' => false
 	            ],
 	            202
 	        );
@@ -31,12 +30,21 @@ class UrlController extends BaseController {
 	{
 		$input = Input::json(true);
 
-		$byeService = new ByeService($input['name']);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
+		// Queue::push('ByeService', ['name' => $input['name']]);
 
 	    return Response::json(
 	    		[
-		            'error' => false,
-		            'name' => $byeService->getBye()
+		            'error' => false
 	            ],
 	            202
 	        );

@@ -2,13 +2,12 @@
 
 class ByeService {
 
-    private $name;
+    public function fire($job, $data) {
 
-    function __construct($name) {
-        $this->name = $name;
-    }
+        $name = $data['name'];
 
-    public function getBye() {
-        return "Bye $this->name! :(";
+        echo "Bye $name! :(";
+
+        $job->delete();
     }
 }
