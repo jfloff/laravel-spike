@@ -14,7 +14,7 @@ class UrlController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
 		//Formerly: return 'Hello, API';
 	    $urls = Url::where('user_id', Auth::user()->id)->get();
@@ -35,7 +35,7 @@ class UrlController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function postStore()
 	{
 		$input = Input::json(true);
 
@@ -61,7 +61,7 @@ class UrlController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function show($id)
+	public function getShow($id)
 	{
 		// Make sure current user owns the requested resource
 	    $url = Url::where('user_id', Auth::user()->id)
@@ -84,7 +84,7 @@ class UrlController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function update($id)
+	public function putUpdate($id)
 	{
 		$url = Url::where('user_id', Auth::user()->id)->find($id);
 		$input = Input::json(true);
@@ -112,7 +112,7 @@ class UrlController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function deleteDestroy($id)
 	{
 		$url = Url::where('user_id', Auth::user()->id)->find($id);
 	    $url->delete();

@@ -25,6 +25,10 @@ Route::get('/authtest', array('before' => 'apiauth', function()
     return View::make('hello');
 }));
 
+/**
+ * api v1, examples in controller class
+ */
 Route::group(array('prefix' => 'api/v1'), function() {
-    Route::resource('url', 'UrlController');
+    // Route::resource('url', 'UrlController');
+    Route::controller('url', 'UrlController');
 });
