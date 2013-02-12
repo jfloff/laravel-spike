@@ -17,18 +17,8 @@ Route::get('/', function()
 });
 
 /**
- * $ curl laravel-spike.dev:8888/authtest
- * $ curl --user firstuser:first_password laravel-spike.dev:8888/authtest
- */
-Route::get('/authtest', array('before' => 'apiauth', function()
-{
-    return View::make('hello');
-}));
-
-/**
  * api v1, examples in controller class
  */
-Route::group(array('prefix' => 'api/v1'), function() {
-    // Route::resource('url', 'UrlController');
+Route::group(array('prefix' => 'api/'), function() {
     Route::controller('url', 'UrlController');
 });
