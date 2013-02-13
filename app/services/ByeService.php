@@ -6,7 +6,9 @@ class ByeService {
 
         $name = $data['name'];
 
-        echo "Bye $name! :(";
+        $handle = fopen('/tmp/services.txt', 'a+');
+        $date = date('Y-m-d H:i:s');
+        fwrite($handle, "[$date] Bye $name! :(\n");
 
         $job->delete();
     }

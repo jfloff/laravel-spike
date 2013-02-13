@@ -6,7 +6,9 @@ class HelloService {
 
         $name = $data['name'];
 
-        echo "Hello $name! :)";
+        $handle = fopen('/tmp/services.txt', 'a+');
+        $date = date('Y-m-d H:i:s');
+        fwrite($handle, "[$date] Hello $name! :)\n");
 
         $job->delete();
     }

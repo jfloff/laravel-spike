@@ -12,6 +12,17 @@ class UrlController extends BaseController {
 		$input = Input::json(true);
 
 		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
+		Queue::push('HelloService', ['name' => $input['name']]);
 
 	    return Response::json(
 	    		[
@@ -31,16 +42,16 @@ class UrlController extends BaseController {
 		$input = Input::json(true);
 
 		Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
-		// Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
+		Queue::push('ByeService', ['name' => $input['name']]);
 
 	    return Response::json(
 	    		[
