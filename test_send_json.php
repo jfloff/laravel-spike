@@ -37,10 +37,14 @@ $name = json_encode([
 
 // var_dump($name); die();
 
+$username = 'test';
+$password = 'test_password';
+
 // curl request
 $ch = curl_init($hostname);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $name);
+curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
 
 // JSON
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
