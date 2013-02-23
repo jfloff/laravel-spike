@@ -13,16 +13,8 @@ class UsersTableSeeder extends Seeder {
 
         User::create(
             [
-                'username' => 'firstuser',
-                'password' => Hash::make('first_password'),
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime
-            ]
-        );
-        User::create(
-            [
-                'username' => 'seconduser',
-                'password' => Hash::make('second_password'),
+                'username' => 'test',
+                'password' => Hash::make('test_password'),
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
             ]
